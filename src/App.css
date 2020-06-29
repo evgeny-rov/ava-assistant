@@ -36,14 +36,15 @@ body {
 }
 
 .show-contacts-btn {
-  width: 100px;
+  width: 200px;
   height: 100px;
   background-image: linear-gradient(to top left, #fff, var(--ava-accent-color));
   background-color: var(--main-bg-color);
+  color: rgb(134, 134, 134);
 }
 
 .ava-container {
-  position: relative;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
