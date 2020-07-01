@@ -11,7 +11,7 @@ function App() {
       <input
         type="button"
         className="btn show-contacts-btn"
-        value="contact me"
+        value="click me"
         onClick={() => !showContact && setShowContact(true)}
       />
     </div>

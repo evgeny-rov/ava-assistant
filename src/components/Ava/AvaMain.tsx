@@ -29,19 +29,24 @@ export default ({ setShow }: props) => {
 
   const typedInstance = useRef(null);
   
-  const [springProps, setSpring] = useSpring(() => ({
+  const [containerSpring, setContainerSpring] = useSpring(() => ({
     config: config.molasses,
     opacity: 0,
     width: "1%",
     height: "1vh",
   }));
 
+  const resetTyped = () => {
+    const typedRef: any = typedInstance.current;
+    if (typedRef) typedRef.typed.reset();
+  };
+
   useEffect(() => {
-    setSpring({ opacity: 1, width: "100%", height: "100vh" });
+    setContainerSpring({ opacity: 1, width: "100%", height: "100vh" });
   });
 
   const smoothUnmount = () => {
-    setSpring({
+    setContainerSpring({
       config: config.gentle,
       opacity: 0,
       width: "10%",
@@ -50,18 +55,13 @@ export default ({ setShow }: props) => {
     });
   };
 
-  const resetTyped = () => {
-    const typedRef: any = typedInstance.current;
-    if (typedRef) typedRef.typed.reset();
-  };
-
   const handleChange = (
     e:
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLTextAreaElement>
   ) => {
-    const value = e.target.value;
     const name = e.target.name;
+    const value = e.target.value;
     const newFormState = { ...formState, [name]: value };
     setFormState(newFormState);
   };
@@ -87,7 +87,7 @@ export default ({ setShow }: props) => {
   };
 
   return (
-    <animated.div className="ava-container" style={springProps}>
+    <animated.div className="ava-container" style={containerSpring}>
       <input
         type="button"
         className="btn ava-close-btn"
@@ -98,7 +98,7 @@ export default ({ setShow }: props) => {
         <Typed
           ref={typedInstance}
           strings={avaMemory[stage - 1]}
-          typeSpeed={60}
+          typeSpeed={70}
           cursorChar={"<"}
         />
       </span>
