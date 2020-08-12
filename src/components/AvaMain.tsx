@@ -1,18 +1,18 @@
-import React, { useState, useRef, useEffect } from "react";
-import Typed from "react-typed";
-import { useSpring, animated, config } from "react-spring";
-import { Step1, Step2, Step3 } from "./avaSteps";
+import React, { useState, useRef, useEffect } from 'react';
+import Typed from 'react-typed';
+import { useSpring, animated, config } from 'react-spring';
+import { Step1, Step2, Step3 } from './avaSteps';
 
 const avaMemory: Array<string[]> = [
   [
-    "Hello, my name is Ava.",
-    "I will help you send your message.",
-    "What is your name?",
+    'Hello, my name is Ava.',
+    'I will help you send your message.',
+    'What is your name?',
   ],
-  ["What is your email?"],
-  ["Type your message below"],
-  ["Sending your message..."],
-  ["Your message was sent, Thank you."],
+  ['What is your email?'],
+  ['Type your message below'],
+  ['Sending your message...'],
+  ['Your message was sent, Thank you.'],
 ];
 
 interface props {
@@ -22,18 +22,18 @@ interface props {
 export default ({ setShow }: props) => {
   const [stage, setStage] = useState(1);
   const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
 
   const typedInstance = useRef(null);
-  
+
   const [containerSpring, setContainerSpring] = useSpring(() => ({
     config: config.molasses,
     opacity: 0,
-    width: "1%",
-    height: "1vh",
+    width: '1%',
+    height: '1vh',
   }));
 
   const resetTyped = () => {
@@ -42,15 +42,15 @@ export default ({ setShow }: props) => {
   };
 
   useEffect(() => {
-    setContainerSpring({ opacity: 1, width: "100%", height: "100vh" });
+    setContainerSpring({ opacity: 1, width: '100%', height: '100vh' });
   });
 
   const smoothUnmount = () => {
     setContainerSpring({
       config: config.gentle,
       opacity: 0,
-      width: "10%",
-      height: "10vh",
+      width: '10%',
+      height: '10vh',
       onRest: () => setShow(false),
     });
   };
@@ -99,7 +99,7 @@ export default ({ setShow }: props) => {
           ref={typedInstance}
           strings={avaMemory[stage - 1]}
           typeSpeed={70}
-          cursorChar={"<"}
+          cursorChar={'<'}
         />
       </span>
       <form

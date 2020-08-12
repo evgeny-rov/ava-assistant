@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import "./App.css";
-import Ava from "./components/Ava/AvaMain";
+import React, { useState } from 'react';
+import './App.css';
+import Ava from './components/AvaMain';
 
 function App() {
   const [showContact, setShowContact] = useState(false);

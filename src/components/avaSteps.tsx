@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from "react";
-import { useSpring, animated, config } from "react-spring";
+import React, { FunctionComponent } from 'react';
+import { useSpring, animated, config } from 'react-spring';
 
 interface stepProps {
   handleChange: (
@@ -18,9 +18,9 @@ export const Step1: FunctionComponent<stepProps> = ({
   const inputSpring = useSpring({
     config: config.molasses,
     delay: 300,
-    width: "18em",
+    width: '18em',
     opacity: 1,
-    from: { width: "1em", opacity: 0 },
+    from: { width: '1em', opacity: 0 },
   });
   const buttonSpring = useSpring({
     config: config.molasses,
@@ -59,9 +59,9 @@ export const Step2: FunctionComponent<stepProps> = ({
 }) => {
   const inputSpring = useSpring({
     config: config.molasses,
-    width: "18em",
+    width: '18em',
     opacity: 1,
-    from: { width: "1em", opacity: 0 },
+    from: { width: '1em', opacity: 0 },
   });
   const buttonSpring = useSpring({
     config: config.molasses,
@@ -109,10 +109,10 @@ export const Step3: FunctionComponent<stepProps> = ({
 }) => {
   const inputSpring = useSpring({
     config: config.molasses,
-    width: "80vmin",
-    height: "60vmin",
+    width: '80vmin',
+    height: '60vmin',
     opacity: 1,
-    from: { width: "1vmin", opacity: 0 },
+    from: { width: '1vmin', opacity: 0 },
   });
   const buttonSpring = useSpring({
     config: config.molasses,
