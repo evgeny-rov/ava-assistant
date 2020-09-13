@@ -1,4 +1,4 @@
-This is an experiment dynamic contact me form.
+This is project is an experimental dynamic contact me form.
 
 ## Available Scripts
 
